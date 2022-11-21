@@ -117,24 +117,24 @@ function checaCPFRepetido(cpf){
 function checaEstruturaCPF(cpf){
   const multiplicador = 10
 
-  return checaDigitoVericicador(cpf, multiplicador)
+  return checaDigitoVerificador(cpf, multiplicador)
 }
 
-function checaDigitoVericicador(cpf, multiplicador){
+function checaDigitoVerificador(cpf, multiplicador){
   if(multiplicador >= 12){
     return true
   }
   let multiplicadorInicial = multiplicador
   let soma = 0
   const cpfSemDigitos = cpf.substr(0, multiplicador -1).split("")
-  const checaDigitoVericicador = cpf.charAt(multiplicador -1)
+  const checaDigitoVerificador = cpf.charAt(multiplicador -1)
   for(let contador = 0; multiplicadorInicial > 1; multiplicadorInicial--){
     soma = soma + cpfSemDigitos[contador] * multiplicadorInicial
     contador++
   }
 
-  if(checaDigitoVericicador == confirmaDigito(soma)){
-    return checaDigitoVericicador(cpf, multiplicador +1)
+  if(checaDigitoVerificador == confirmaDigito(soma)){
+    return checaDigitoVerificador(cpf, multiplicador +1)
   }
 
   return false
