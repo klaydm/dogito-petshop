@@ -122,7 +122,7 @@ function checaEstruturaCPF(cpf){
 
 function checaDigitoVericicador(cpf, multiplicador){
   if(multiplicador >= 12){
-    return = true
+    return true
   }
   let multiplicadorInicial = multiplicador
   let soma = 0
